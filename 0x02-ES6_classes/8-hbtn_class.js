@@ -1,5 +1,5 @@
 export default class HolbertonClass {
-  constructor(size, location){
+  constructor(size, location) {
     if (typeof size !== 'number') {
       throw new TypeError('Size must be a number');
     } else if (size < 0) {
