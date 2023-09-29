@@ -4,15 +4,13 @@ export default async function asyncUploadUser() {
   let photo;
   let user;
   try {
-    const photoPromise = await uploadPhoto();
-    photo = photoPromise;
+    photo = await uploadPhoto();
   } catch (err) {
     photo = null;
   }
 
   try {
-    const userPromise = await createUser();
-    user = userPromise;
+    user = await createUser();
   } catch (err) {
     user = null;
   }
