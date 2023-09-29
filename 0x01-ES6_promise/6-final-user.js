@@ -8,8 +8,10 @@ export default function handleProfileSignup(firstName, lastName, fileName) {
   return Promise.allSettled([signUpPromise, photoPromise]).then((values) => {
     const responseArr = values.map((value) => ({
       status: value.status,
-      value: value.status === 'fulfilled' ? value.value : value.reason,
+      value: value.status === 'fulfilled' ? value.value : value.reason.toString(),
     }));
+
+    // console.log(responseArr);
 
     return responseArr;
   });
