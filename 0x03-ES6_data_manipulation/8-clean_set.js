@@ -1,4 +1,7 @@
 export default function cleanSet(set, startString) {
+  if (!(set instanceof Set) || !(startString instanceof String)) {
+    return '';
+  }
   const arrayFromSet = [...set];
   const startsWithString = arrayFromSet.filter((word) => word.startsWith(startString));
 
