@@ -3,7 +3,8 @@ export default function cleanSet(set, startString) {
     return '';
   }
   const arrayFromSet = [...set];
-  const startsWithString = arrayFromSet.filter((word) => word.startsWith(startString));
+  const onlyStrings = arrayFromSet.filter((elem) => typeof elem === 'string');
+  const startsWithString = onlyStrings.filter((word) => word.startsWith(startString));
 
   if (startString.length === 0 || startsWithString.length === 0) {
     return '';
